@@ -50,27 +50,27 @@ A small command line program that checks whether an XBRL Taxonomy Package compli
 
 1. Activate virtual environment:
 
-```bash
+```sh
 source venv/bin/activate
 ```
 
 2. Install requirements:
 
-```bash
+```sh
 pip3 install -r requirements.txt
 ```
 
 3. Run script:
 
-```bash
+```sh
 python3 app.py [PROVIDER] [PATH/TO/PKG]
 ```
 
-```bash
+```sh
 python3 app.py EDINET "input/ALL_20221101/ALL_20221101.zip"
 ```
 
-```bash
+```sh
 Input information:
 ------------------
     Provider -> EDINET
@@ -102,9 +102,9 @@ Output result:
 ## :books: Resources used to create this project
 
 * Python
-  * [Python 3.10.13 documentation](https://docs.python.org/3.10/)
-  * [Built-in Functions](https://docs.python.org/3.10/library/functions.html)
-  * [Python Module Index](https://docs.python.org/3.10/py-modindex.html)
+  * [Python 3.12 documentation](https://docs.python.org/3/)
+  * [Built-in Functions](https://docs.python.org/3/library/functions.html)
+  * [Python Module Index](https://docs.python.org/3/py-modindex.html)
 * XBRL
   * [Extensible Business Reporting Language (XBRL) 2.1](https://www.xbrl.org/Specification/XBRL-2.1/REC-2003-12-31/XBRL-2.1-REC-2003-12-31+corrected-errata-2013-02-20.html)
   * [Taxonomy Packages 1.0](https://www.xbrl.org/Specification/taxonomy-package/REC-2016-04-19/taxonomy-package-REC-2016-04-19.html)
