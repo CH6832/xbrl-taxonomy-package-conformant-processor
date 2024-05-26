@@ -48,19 +48,13 @@ A small command line program that checks whether an XBRL Taxonomy Package compli
 
 ### Prerequisites and example usage
 
-1. Activate virtual environment:
-
-```sh
-source venv/bin/activate
-```
-
-2. Install requirements:
+0. Install requirements:
 
 ```sh
 pip3 install -r requirements.txt
 ```
 
-3. Run script:
+1. Run script:
 
 ```sh
 python3 app.py [PROVIDER] [PATH/TO/PKG]
@@ -99,6 +93,97 @@ Output result:
     ..\output\ALL_20221101\ALL_20221101.zip is fixed!
 ```
 
+### Build and install the `.whl` package
+
+0. Upgrade packages:
+
+```sh
+py -m pip install --upgrade build 
+```
+
+1. Build package:
+
+```sh
+py -m build 
+```
+
+2. Install the package:
+
+```sh
+py -m pip install "dist/example_package_CHRISTOPH_HARTLEB-0.0.1-py3-none-any.whl"
+```
+
+### Create docuemntation
+
+0. Move into `dcos` folder
+
+```sh
+cd docs
+```
+
+1. Initilaize project:
+
+```sh
+sphinx-quickstart 
+```
+
+2. Build/rebuild the documentation:
+
+```sh
+make html
+```
+
+## :bulb: Tips and Tricks
+
+    Use absolute paths for input XBRL taxonomy packages to avoid any path-related issues.
+    Ensure your input packages adhere to the XBRL Taxonomy Package 1.0 standard for accurate processing.
+
+## :wrench: Troubleshooting
+
+If you encounter any issues while using the tool, consider the following troubleshooting steps:
+
+- Check if all prerequisites are installed correctly.
+- Verify that the input XBRL taxonomy package is valid and adheres to the required format.
+- Refer to the error messages for clues on what might be going wrong.
+- Search for similar issues in the project's GitHub repository or online forums.
+
+## :loudspeaker: Contributing
+
+We welcome contributions from the community! If you'd like to contribute to the project, please follow these steps:
+
+* Fork the repository.
+* Create a new branch for your feature or bug fix.
+* Make your changes and ensure all tests pass.
+* Submit a pull request with a clear description of your changes.
+
+## :open_book: Documentation
+
+For more information on how to use the tool and its features, open the [official documentation](/docs/build/html/index.html) in a browser of your choice.
+
+## :rocket: Roadmap
+
+Here are some planned features and enhancements for future releases:
+
+    Support for additional XBRL taxonomy package standards.
+    Improved error handling and logging.
+    Integration with other XBRL processing tools.
+
+## :raising_hand: Support
+
+If you need any assistance or have any questions about the project, feel free to reach out to us via email or open a new issue in the GitHub repository.
+
+## :bookmark: License
+
+This project is licensed under the terms of the [GPL v3](LICENSE).
+
+## :copyright: Copyright
+
+See the [COPYRIGHT](COPYRIGHT) file for copyright and licensing details.
+
+## :straight_ruler: Code of Conduct
+
+Please review our [Code of Conduct](CODE_OF_CONDUCT.md) before contributing to this project.
+
 ## :books: Resources used to create this project
 
 * Python
@@ -115,15 +200,3 @@ Output result:
   * [.gitignore file](https://git-scm.com/docs/gitignore)
 * Editor
   * [Visual Studio Code](https://code.visualstudio.com/)
-
-## :bookmark: License
-
-This project is licensed under the terms of the [GPL v3](LICENSE).
-
-## :copyright: Copyright
-
-See the [COPYRIGHT](COPYRIGHT) file for copyright and licensing details.
-
-## :straight_ruler: Code of Conduct
-
-Please review our [Code of Conduct](CODE_OF_CONDUCT.md) before contributing to this project.

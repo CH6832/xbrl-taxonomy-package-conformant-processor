@@ -3,18 +3,14 @@
 
 import os
 import sys
-import unittest
+# line below ensures that python searhces through all directories for imports
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-from TPChecker import TPChecker
-
-"""CheckerTest.py
-
-The class contains relevant functions to test all methods in the
-TPChecker.py class.
-"""
+import unittest
+from src.classes.TPChecker import TPChecker
 
 class CheckerTest(unittest.TestCase):
     """Methods for testing the class Checker.py"""
+    
     # has_zip_format()
     def test_has_zip_format(self) -> None:
         """Test has_zip_format() function."""
