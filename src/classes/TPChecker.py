@@ -9,13 +9,13 @@ analyze an XBRL Taxonomy Package.
 
 import os
 import sys
-# line below ensures that python searhces through all directories for imports
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 import xml.etree.ElementTree as ET
 from colorama import Fore
 from lxml import etree
 from zipfile import ZipFile
 from urllib.parse import urljoin
+# line below ensures that python searhces through all directories for imports
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 # from TPMisc import print_color_msg
 from ..modules.utils import *
 

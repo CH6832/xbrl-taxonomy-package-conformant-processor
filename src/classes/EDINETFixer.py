@@ -17,8 +17,6 @@ import xml.etree.ElementTree as ET
 import zipfile
 from io import TextIOWrapper
 import shutil
-import zipfile
-import os
 from colorama import Fore
 from src.classes.TPChecker import TPChecker
 from ..interfaces.TPFixerInterface import TaxonomyPackageFixerInterface

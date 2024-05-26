@@ -3,7 +3,7 @@
 ## Reporting Security Issues
 
 If you believe you have found a security vulnerability or other security concern in this project, please report it to us via github.
-(mailto:security@example.com). Please do not create public GitHub issues for security vulnerabilities.
+(mailto:krystovhar@gmail.com). Please do not create public GitHub issues for security vulnerabilities.
 
 ## Response Time
 
@@ -19,6 +19,5 @@ We do not currently offer a bug bounty program for this project.
 
 ## Additional Information
 
-- For general inquiries or support requests, please contact [support@example.com](mailto:support@example.com).
-- Our project follows the [Security Advisories](https://github.com/example/project/security/advisories) feature on GitHub to provide notifications about security vulnerabilities.
-- To stay informed about security updates and announcements, you can subscribe to our [mailing list](https://example.com/security-mailing-list).
+- For general inquiries or support requests, please contact [support@example.com](mailto:krystovhar@gmail.com).
+- Our project follows the [Security Advisories](https://github.com/advisories) feature on GitHub to provide notifications about security vulnerabilities.
