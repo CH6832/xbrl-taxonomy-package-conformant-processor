@@ -113,7 +113,7 @@ py -m build
 py -m pip install "dist/example_package_CHRISTOPH_HARTLEB-0.0.1-py3-none-any.whl"
 ```
 
-### Create docuemntation
+### Create documentation
 
 0. Move into `dcos` folder
 
@@ -190,9 +190,16 @@ Please review our [Code of Conduct](CODE_OF_CONDUCT.md) before contributing to t
   * [Python 3.12 documentation](https://docs.python.org/3/)
   * [Built-in Functions](https://docs.python.org/3/library/functions.html)
   * [Python Module Index](https://docs.python.org/3/py-modindex.html)
+  * [lxml - XML and HTML with Python](https://lxml.de/)
+  * [SETUPTOOLS - Documentation](https://setuptools.pypa.io/en/latest/)
+  * [Python Packaging User Guide](https://packaging.python.org/en/latest/)
+  * [Sphinx](https://www.sphinx-doc.org/en/master/)
 * XBRL
   * [Extensible Business Reporting Language (XBRL) 2.1](https://www.xbrl.org/Specification/XBRL-2.1/REC-2003-12-31/XBRL-2.1-REC-2003-12-31+corrected-errata-2013-02-20.html)
   * [Taxonomy Packages 1.0](https://www.xbrl.org/Specification/taxonomy-package/REC-2016-04-19/taxonomy-package-REC-2016-04-19.html)
+* XML
+  * [Extensible Markup Language (XML) 1.0 (Fifth Edition)](https://www.w3.org/TR/xml/)
+  * [W3C XML Schema Definition Language (XSD) 1.1 Part 1: Structures](https://www.w3.org/TR/xmlschema11-1/)
 * Markdwon
   * [Basic syntax](https://www.markdownguide.org/basic-syntax/)
   * [Complete list of github markdown emofis](https://dev.to/nikolab/complete-list-of-github-markdown-emoji-markup-5aia)
