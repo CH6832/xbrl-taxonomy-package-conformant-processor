@@ -50,26 +50,17 @@ def print_color_msg(msg: str, color: str = Fore.WHITE) -> None:
     print(f"{color}{msg}{Style.RESET_ALL}")
     return None
 
-def delete_non_zip_files_and_folders_recursive(folder_path) -> None:
-    """
-    Deletes all non-ZIP files and folders in the specified folder and its subfolders.
-
-    :param folder_path: Path to the folder to process.
-    """
-    # Walk through the folder tree recursively
+def delete_non_zip_files_and_folders_recursive(folder_path: str) -> None:
+    """Deletes all non-ZIP files and folders in the specified folder and its subfolders."""
     for root, dirs, files in os.walk(folder_path, topdown=False):
         for file_name in files:
             file_path = os.path.join(root, file_name)
-            # Check if the file is not a ZIP archive
             if not file_name.lower().endswith('.zip'):
-                # Delete the file
                 os.remove(file_path)
 
         for dir_name in dirs:
             dir_path = os.path.join(root, dir_name)
-            # Check if the directory is empty
             if not os.listdir(dir_path):
-                # Delete the empty directory
                 os.rmdir(dir_path)
 
     return None

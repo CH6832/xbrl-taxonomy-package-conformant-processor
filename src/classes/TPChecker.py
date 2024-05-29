@@ -20,11 +20,12 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from ..modules.utils import *
 
 class TPChecker:
-    """The class provides methods to check an xbrl taxonomy package based on the standard here:
+    """
+    The class provides methods to check an xbrl taxonomy package based on the standard here:
     https://www.xbrl.org/Specification/taxonomy-package/REC-2016-04-19/taxonomy-package-REC-2016-04-19.html.
     """
     def __init__(self) -> None:
-        """class constructor"""
+        """class constructor."""
         return None
 
     def check_case_sensitivity(self) -> None:
@@ -102,7 +103,7 @@ class TPChecker:
             return False
 
     def has_catalog_xml(self, archive, catalog_file: str = "catalog.xml") -> bool:
-        """Standard description: 'The top-level directory MUST ontain a catalog.xml file
+        """Standard description: 'The top-level directory MUST contain a catalog.xml file
         
         A Taxonomy Package MUST NOT include a catalog file which includes more than one rewriteURI element
         with the same value (after performing URI Normalization, as prescribed by the XML Catalog Specification)

@@ -23,7 +23,8 @@ from ..interfaces.TPFixerInterface import TaxonomyPackageFixerInterface
 from ..modules.utils import *
 
 class EBATaxonomyPackage(TaxonomyPackageFixerInterface):
-    """Use this class to fix an EBA XBRL Taxonomy Package.
+    """
+    Use this class to fix an EBA XBRL Taxonomy Package.
     
     The package in input/* folder as well as newer and older versions
     can be found here: https://www.eba.europa.eu/risk-analysis-and-data/reporting-frameworks/reporting-framework-3.3

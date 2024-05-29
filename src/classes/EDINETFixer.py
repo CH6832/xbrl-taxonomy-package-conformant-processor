@@ -23,7 +23,8 @@ from ..interfaces.TPFixerInterface import TaxonomyPackageFixerInterface
 from ..modules.utils import print_color_msg
 
 class EDINETTaxonomyPackage(TaxonomyPackageFixerInterface):
-    """Use this class to fix an EDINET XBRL Taxonomy Package.
+    """
+    Use this class to fix an EDINET XBRL Taxonomy Package.
     
     The package in input/* folder as well as newer and older versions
     can be found here: https://disclosure2.edinet-fsa.go.jp/weee0020.aspx

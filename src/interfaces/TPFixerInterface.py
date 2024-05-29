@@ -22,9 +22,10 @@ from ..classes.TPChecker import TPChecker
 from ..modules.utils import print_color_msg
 
 class TaxonomyPackageFixerInterface(ABC):
-    """The Interface provides methods to fix an
-    XBRL Taxonomy Package by a certain provider.
     """
+    The Interface provides methods to fix an XBRL Taxonomy Package by a certain provider.
+    """
+
     def __init__(self, full_path_to_zip: str, destination_folder: str) -> None:
         """Initialize XBRL Taxonomy Package class. By initializing the class
         the input package is copied over to the ouptut folder and extracted there
@@ -41,13 +42,13 @@ class TaxonomyPackageFixerInterface(ABC):
         try:
             with zipfile.ZipFile(os.path.join(self.destination_folder, os.path.basename(full_path_to_zip)), 'r') as zip_ref:
                 zip_ref.extractall(self.destination_folder)
-            print(f"Extracted {zip_path} to {extract_to}")
+            print(f"Extracted {self.full_path_to_zip} to {self.destination_folder}")
         except zipfile.BadZipFile:
-            print(f"Error: The file {zip_path} is not a valid ZIP archive.")
+            print(f"Error: The file {self.full_path_to_zip} is not a valid ZIP archive.")
         except PermissionError:
-            print(f"Error: Permission denied. Cannot extract to {extract_to}.")
+            print(f"Error: Permission denied. Cannot extract to {self.destination_folder}.")
         except Exception as e:
-            print(f"An error occurred: {e}")                
+            print(f"An error occurred: {e}")
         
         return None
 
