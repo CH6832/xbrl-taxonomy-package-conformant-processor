@@ -115,7 +115,7 @@ py -m pip install "dist/example_package_CHRISTOPH_HARTLEB-0.0.1-py3-none-any.whl
 
 ### Create documentation
 
-0. Move into `dcos` folder
+0. Move into `docs/` folder
 
 ```sh
 cd docs
