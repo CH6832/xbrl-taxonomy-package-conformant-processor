@@ -17,6 +17,8 @@ from colorama import Fore, init
 from src.classes.TPChecker import TPChecker
 from src.classes.EBAFixer import EBATaxonomyPackage
 from src.classes.EDINETFixer import EDINETTaxonomyPackage
+from src.classes.CMFCLCIFixer import CMFCLCITaxonomyPackage
+from src.classes.CIPCFixer import CIPCTaxonomyPackage
 from src.modules.utils import *
 
 def main() -> None:
@@ -153,8 +155,8 @@ def main() -> None:
                 edinet_taxonomy_package.fix_top_level_single_dir()
 
             # prepare variables to work with
-            full_path_to_zip: str = source_zip_path.replace("input", "output")
-            target_output_dir: str = source_zip_path.replace("input", "output").replace(".zip","")
+            full_path_to_zip: str = str(source_zip_path).replace("input", "output")
+            target_output_dir: str = str(source_zip_path).replace("input", "output").replace(".zip","")
 
             # restructure the folder strucutre in the package
             # means moveing taxonomy/, samples/ and META-INF/ folder
@@ -178,6 +180,61 @@ def main() -> None:
             print_color_msg(f"\nOutput result:",Fore.BLUE)
             print_color_msg(f"-"*14,Fore.BLUE)
             print_color_msg(f'    {os.path.basename(args.package.replace("input","output"))} is fixed!\n',Fore.BLUE)
+        
+        elif provider_name == "CMFCLCI":
+
+            print_color_msg(f"\nFixing package...",Fore.YELLOW)
+
+            # initialize the EBA class
+            cmfclci_taxonomy_package: CMFCLCITaxonomyPackage = CMFCLCITaxonomyPackage(source_zip_path, os.path.join(destination_folder, destination_folder.stem))
+            
+            # if all three variables are true, there is nothig to fix and
+            # the package is moved as it is in the output-folder
+            if not ZIP_FORMAT:
+                cmfclci_taxonomy_package.convert_to_zip_archive()
+            if not METAINF_DIR:
+                cmfclci_taxonomy_package.fix_meta_inf_folder()
+            if not SINGLE_DIR:
+                cmfclci_taxonomy_package.fix_top_level_single_dir()
+
+            # prepare variables to work with
+            full_path_to_zip: str = str(source_zip_path).replace("input", "output")
+            target_output_dir: str = str(source_zip_path).replace("input", "output").replace(".zip","")
+
+            cmfclci_taxonomy_package.fix_catalog_xml(target_output_dir)
+            cmfclci_taxonomy_package.fix_taxonomy_package_xml(target_output_dir)
+
+            cmfclci_taxonomy_package.restructure_folder()
+
+            gen_zip_archive(target_output_dir, full_path_to_zip)
+
+            shutil.rmtree(target_output_dir)
+
+        elif provider_name == "CIPC":
+
+            print_color_msg(f"\nFixing package...",Fore.YELLOW)
+
+            # initialize the EBA class
+            cipc_taxonomy_package: CIPCTaxonomyPackage = CIPCTaxonomyPackage(source_zip_path, os.path.join(destination_folder, destination_folder.stem))
+            
+            # if all three variables are true, there is nothig to fix and
+            # the package is moved as it is in the output-folder
+            if not ZIP_FORMAT:
+                cipc_taxonomy_package.convert_to_zip_archive()
+            if not METAINF_DIR:
+                cipc_taxonomy_package.fix_meta_inf_folder()
+            if not SINGLE_DIR:
+                cipc_taxonomy_package.fix_top_level_single_dir()
+
+            cipc_taxonomy_package.restructure_folder()
+
+            # prepare variables to work with
+            full_path_to_zip: str = str(source_zip_path).replace("input", "output")
+            target_output_dir: str = str(source_zip_path).replace("input", "output").replace(".zip","")
+
+            gen_zip_archive(target_output_dir, full_path_to_zip)
+
+            shutil.rmtree(target_output_dir)
 
         else:
 
