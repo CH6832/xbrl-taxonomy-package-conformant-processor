@@ -19,9 +19,9 @@ import re
 from io import TextIOWrapper
 import shutil
 from colorama import Fore
-from src.classes.TPChecker import TPChecker
-from ..interfaces.TPFixerInterface import TaxonomyPackageFixerInterface
-from ..modules.utils import *
+from src.checker.TPChecker import TPChecker
+from .TPFixerInterface import TaxonomyPackageFixerInterface
+from ..helpers.utils import *
 
 class CIPCTaxonomyPackage(TaxonomyPackageFixerInterface):
     """

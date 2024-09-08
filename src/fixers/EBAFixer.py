@@ -18,9 +18,9 @@ import zipfile
 from io import TextIOWrapper
 import shutil
 from colorama import Fore
-from src.classes.TPChecker import TPChecker
-from ..interfaces.TPFixerInterface import TaxonomyPackageFixerInterface
-from ..modules.utils import *
+from src.checker.TPChecker import TPChecker
+from .TPFixerInterface import TaxonomyPackageFixerInterface
+from ..helpers.utils import *
 
 class EBATaxonomyPackage(TaxonomyPackageFixerInterface):
     """
@@ -28,21 +28,27 @@ class EBATaxonomyPackage(TaxonomyPackageFixerInterface):
     
     The package in input/* folder as well as newer and older versions
     can be found here: https://www.eba.europa.eu/risk-analysis-and-data/reporting-frameworks/reporting-framework-3.3
-    """    
+    """ 
+
     def convert_to_zip_archive(self) -> None:
         return None
+
 
     def fix_meta_inf_folder(self) -> None:
         return None
 
+
     def fix_top_level_single_dir(self) -> None:
         return None
+
 
     def restructure_folder(self) -> None:
         return None
 
+
     def fix_taxonomy_package_xml(self) -> None:
         return None
+
     
     def fix_catalog_xml(self) -> None:
         return None

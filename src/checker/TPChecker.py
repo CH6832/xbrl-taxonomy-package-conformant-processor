@@ -17,16 +17,18 @@ from urllib.parse import urljoin
 # line below ensures that python searhces through all directories for imports
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 # from TPMisc import print_color_msg
-from ..modules.utils import *
+from ..helpers.utils import *
 
 class TPChecker:
     """
     The class provides methods to check an xbrl taxonomy package based on the standard here:
     https://www.xbrl.org/Specification/taxonomy-package/REC-2016-04-19/taxonomy-package-REC-2016-04-19.html.
     """
+
     def __init__(self) -> None:
         """class constructor."""
         return None
+
 
     def check_case_sensitivity(self) -> None:
         """Standard description: 'A Conformant Processor MUST treat all filenames prescribed by this
@@ -36,6 +38,7 @@ class TPChecker:
         # no need for a separate function, to check case sensitivity.
         return None
 
+
     def has_zip_format(self, archive: str) -> bool:
         """Standard description: 'A Taxonomy Package MUST conform to the .ZIP File Format
         Specification [ZIP]'"""
@@ -43,6 +46,7 @@ class TPChecker:
             return True
         else:
             return False
+
 
     def has_top_level_single_dir(self, archive: str) -> bool:
         """Standard description: 'A Taxonomy Package MUST contain a single top-level directory, with all other files being
@@ -55,6 +59,7 @@ class TPChecker:
                 return True
             else:
                 return False
+
 
     def validate_xml(self, schemafile: str, example: ET.ElementTree) -> bool:
         """Standard description: 'The taxonomyPackage.xml MUST conform to the taxonomy-package.xsd
@@ -76,6 +81,7 @@ class TPChecker:
             print_color_msg(f"    An error occurred: {e}",Fore.YELLOW)
         return False         
 
+
     def has_meta_inf_folder(self, archive: str, folder_name: str = "META-INF") -> bool:
         """Standard description: 'The top-level directory MUST contain a sub directory named META-INF.'"""
         zipfilepath: str = os.path.dirname(os.path.abspath(__file__)) + os.path.abspath(str(archive).replace("\\", "/").replace("..",""))
@@ -89,6 +95,7 @@ class TPChecker:
                     continue
             return False
 
+
     def has_taxonomy_package_xml(self, archive: str, tp_file: str = "taxonomyPackage.xml") -> bool:
         """Standard description: 'The top-level directory MUST contain a taxonomyPackage.xml file.'"""
         # zip_file_path: str = os.path.dirname(os.path.abspath(__file__)) + os.path.abspath(archive.replace("\\", "/").replace("..",""))
@@ -101,6 +108,7 @@ class TPChecker:
                 else:
                     continue
             return False
+
 
     def has_catalog_xml(self, archive, catalog_file: str = "catalog.xml") -> bool:
         """Standard description: 'The top-level directory MUST contain a catalog.xml file
@@ -118,6 +126,7 @@ class TPChecker:
                 else:
                     continue
             return False
+
 
     # TODO: Further development and testing needed. It is assumed though that the
     # xml base resolution is valid, because providers test the package as well.
@@ -170,6 +179,7 @@ class TPChecker:
             return True
         else:
             return False
+
 
     # TODO: Further development and testing needed. It is assumed though that the
     # entry point check is valid, because providers test the package as well.

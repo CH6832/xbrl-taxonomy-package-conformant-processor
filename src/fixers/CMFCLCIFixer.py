@@ -20,9 +20,9 @@ import shutil
 import glob
 import re
 from colorama import Fore
-from src.classes.TPChecker import TPChecker
-from ..interfaces.TPFixerInterface import TaxonomyPackageFixerInterface
-from ..modules.utils import *
+from src.checker.TPChecker import TPChecker
+from .TPFixerInterface import TaxonomyPackageFixerInterface
+from ..helpers.utils import *
 
 class CMFCLCITaxonomyPackage(TaxonomyPackageFixerInterface):
     """
@@ -43,20 +43,27 @@ class CMFCLCITaxonomyPackage(TaxonomyPackageFixerInterface):
             if item == 'META-INF' or item == 'files':
                 continue
             shutil.move(item_path, os.path.join(self.destination_folder, "files"))
+        
         return None
+
 
     def fix_meta_inf_folder(self) -> None:
         os.makedirs(os.path.join(self.destination_folder, "META-INF"))
         print_color_msg(f"    META-INF directory generated",Fore.YELLOW)
+        
         return None
 
+
     def convert_to_zip_archive(self) -> None:
+        
         return None
 
     def fix_top_level_single_dir(self) -> None:
         os.makedirs(os.path.join(self.destination_folder, os.path.basename(self.full_path_to_zip).replace(".zip","")), exist_ok = True)
         print_color_msg(f"    Top level directory generated",Fore.YELLOW)
+        
         return None
+
 
     def fix_taxonomy_package_xml(self, source_folder: str) -> None:
         """2. Design and generate the 'taxonomyPackage.xml' file.
@@ -84,6 +91,7 @@ class CMFCLCITaxonomyPackage(TaxonomyPackageFixerInterface):
                     print("No catalog entry found for entry point")
 
             return self.entry_points
+
 
         # Version Pattern for year and/or months and/or day
         yearMonthDaySearchPattern = re.search(r'\d{4}-\d{2}-\d{2}', source_folder)
@@ -164,9 +172,11 @@ class CMFCLCITaxonomyPackage(TaxonomyPackageFixerInterface):
         else:
             pass
 
+        return None
+
+
     def fix_catalog_xml(self, source_folder: str) -> None:
-        """5. Design and generate the 'catalog.xml'.
-        """
+        """5. Design and generate the 'catalog.xml'."""
 
         def __get_package_version() -> str:
             """Generates the package version number. Assumption that in
@@ -207,3 +217,5 @@ class CMFCLCITaxonomyPackage(TaxonomyPackageFixerInterface):
         else:
             # print(colored("WARNING: 'catalog.xml' file already exists!", "yellow"))
             print_color_msg(f"WARNING: 'catalog.xml' file already exists!",Fore.YELLOW)
+
+        return None

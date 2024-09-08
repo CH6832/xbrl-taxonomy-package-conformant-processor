@@ -112,6 +112,20 @@ py -m build
 py -m pip install "dist/example_package_CHRISTOPH_HARTLEB-0.0.1-py3-none-any.whl"
 ```
 
+### Run tests
+
+0. Move into `tests/` folder
+
+```sh
+py run_tests.py
+```
+
+1. Or you can run every test separately as well:
+
+```sh
+pytest test_EBAFixer.py
+```
+
 ### Create documentation
 
 0. Move into `docs/` folder

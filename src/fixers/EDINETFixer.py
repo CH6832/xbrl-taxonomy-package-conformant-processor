@@ -18,9 +18,9 @@ import zipfile
 from io import TextIOWrapper
 import shutil
 from colorama import Fore
-from src.classes.TPChecker import TPChecker
-from ..interfaces.TPFixerInterface import TaxonomyPackageFixerInterface
-from ..modules.utils import print_color_msg
+from src.checker.TPChecker import TPChecker
+from .TPFixerInterface import TaxonomyPackageFixerInterface
+from ..helpers.utils import print_color_msg
 
 class EDINETTaxonomyPackage(TaxonomyPackageFixerInterface):
     """
@@ -29,18 +29,24 @@ class EDINETTaxonomyPackage(TaxonomyPackageFixerInterface):
     The package in input/* folder as well as newer and older versions
     can be found here: https://disclosure2.edinet-fsa.go.jp/weee0020.aspx
     """
+
     def convert_to_zip_archive(self) -> None:
         shutil.make_archive(self.full_path_to_zip, 'zip', self.destination_folder)    
+        
         return None
+
 
     def fix_top_level_single_dir(self) -> None:
         os.makedirs(os.path.join(self.destination_folder, os.path.basename(self.full_path_to_zip).replace(".zip","")), exist_ok = True)
         print_color_msg(f"    Top level directory generated",Fore.YELLOW)
+        
         return None
     
+
     def fix_meta_inf_folder(self) -> None:
         os.makedirs(os.path.join(self.destination_folder, "META-INF"))
         print_color_msg(f"    META-INF directory generated",Fore.YELLOW)
+        
         return None
 
     def restructure_folder(self) -> None:
@@ -55,7 +61,9 @@ class EDINETTaxonomyPackage(TaxonomyPackageFixerInterface):
                 des_folder = os.path.join(self.destination_folder, os.path.basename(self.full_path_to_zip).replace(".zip",""))
                 shutil.move(folder_name, des_folder)
         print_color_msg(f"    Package content restructured",Fore.YELLOW)
+        
         return None
+
 
     def fix_taxonomy_package_xml(self, source_folder: str) -> None:
         # set relevant elements and its content for the taxonomyPackage.xml file
@@ -135,7 +143,9 @@ class EDINETTaxonomyPackage(TaxonomyPackageFixerInterface):
         # validate taxonomyPackage.xml file
         check_taxonomy_pkg_xml: TPChecker = TPChecker()
         check_taxonomy_pkg_xml.validate_xml("http://www.xbrl.org/2016/taxonomy-package.xsd",os.path.join(source_folder, "META-INF", "taxonomyPackage.xml"))
+        
         return None
+
 
     def fix_catalog_xml(self, source_folder: str) -> None:
         # set relevant elements and its content for the catalog.xml file        
@@ -176,4 +186,5 @@ class EDINETTaxonomyPackage(TaxonomyPackageFixerInterface):
         # validate catalog.xml file
         check_catalog_xml: TPChecker = TPChecker()
         check_catalog_xml.validate_xml("http://www.xbrl.org/2016/taxonomy-package-catalog.xsd",os.path.join(source_folder, "META-INF", "catalog.xml"))
+        
         return None

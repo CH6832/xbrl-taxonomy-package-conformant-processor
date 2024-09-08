@@ -18,8 +18,8 @@ from io import TextIOWrapper
 import shutil
 import zipfile
 from colorama import Fore
-from ..classes.TPChecker import TPChecker
-from ..modules.utils import print_color_msg
+from ..checker.TPChecker import TPChecker
+from ..helpers.utils import print_color_msg
 
 class TaxonomyPackageFixerInterface(ABC):
     """
@@ -52,28 +52,34 @@ class TaxonomyPackageFixerInterface(ABC):
         
         return None
 
+
     @abstractmethod
     def convert_to_zip_archive(self):
         """Returns an xbrl taxonomy package in zip format."""
+
 
     @abstractmethod
     def fix_top_level_single_dir(self):
         """Generates a single toplevel directory for
         the provided xbrl taxonomy package."""
 
+
     @abstractmethod
     def fix_meta_inf_folder(self):
         """Generates a META-INF folder for the
         provided xbrl taxonomy package."""
+
 
     @abstractmethod
     def restructure_folder(self):
         """Perform restructuring of folders in the
         XBRL Taxonomy Package."""
 
+
     @abstractmethod
     def fix_taxonomy_package_xml(self):
         """The top-level directory MUST contain a taxonomyPackage.xml file"""
+    
     
     @abstractmethod
     def fix_catalog_xml(self):
