@@ -15,20 +15,20 @@ A small command line program that checks whether an XBRL Taxonomy Package compli
 ### Content overview
 
     .
-    ├── .vscode/ - visual studio code settings
+    ├── dist/ - python wheel file to install
+    ├── docs/ - generated documentation
+    ├── input/ - taxonomy packages
+    ├── logs/ - logfiles
+    ├── src/ - source code
     ├── tests/ - code and data for tests
-    ├── input/ - xbrl taxonomy packages
-    ├── output/ - folder for fixed taxonomy packages
-    ├── venv/ - data for virtual environemnt 
     ├── .gitignore - contains folders/files ignored by git
-    ├── app.py - program entry point
+    ├── CHANGELOG.md - logfile about project changes
     ├── COPYRIGHT - project copyright
     ├── LICENSE - license text
-    ├── README.md - relevant information about the project
+    ├── README.md - project overview and starting point
     ├── requirements.txt - requirements to run the project
-    ├── TPChecker.py - check package according to the standard
-    ├── TPFixer.py - Fix package according to standard
-    └── TPMisc.py - module with helper functions
+    ├── SECURITY.md - security information
+    └── setup.py - projects metadata
 
 ## :notebook: Features
 

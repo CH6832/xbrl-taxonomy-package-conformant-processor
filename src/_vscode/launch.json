@@ -1,0 +1,19 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python Debugger: Current File",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "app.py",
+            // "args": ["EDINET", "..\\input\\ALL_20221101\\ALL_20221101.zip"],
+            "args": ["EBA", "..\\input\\Reporting_Frameworks_3.3.0.0_errata\\Reporting_Frameworks_3.3.0.0_errata.zip"],
+            // "args": ["CMFCLCI", "..\\input\\cipc_2023-09-07\\cipc_2023-09-07.zip"],
+            // "args": ["CIPC", "..\\input\\cipc_2023-09-07\\cipc_2023-09-07.zip"],
+            "console": "integratedTerminal"
+        }
+    ]
+}
