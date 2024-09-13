@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
 
-"""providers.py
+"""Providers.py
 
 Defines the Provider enum for taxonomy packages.
 """

@@ -5,7 +5,7 @@
 
 The module provides logging functionality.
 
-Example usage
+Example usage:
 if __name__ == "__main__":
     log_file_path = set_logging_directory('logs')
     logger = setup_logger(__name__, log_file=log_file_path)
@@ -21,7 +21,7 @@ from logging.handlers import RotatingFileHandler
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 
-def setup_logger(name: str, log_file: str = 'app.log', level: int = logging.INFO, max_bytes: int = 1_000_000, backup_count: int = 5) -> logging.Logger:
+def setup_logger(name: str, log_file: str, level: int = logging.INFO, max_bytes: int = 1_000_000, backup_count: int = 5) -> logging.Logger:
     """Set up a logger with a specified name, log file, and log level."""
 
     # Create a logger with the given name
@@ -50,10 +50,10 @@ def setup_logger(name: str, log_file: str = 'app.log', level: int = logging.INFO
     return logger
 
 
-def set_logging_directory(log_dir: str) -> str:
+def set_logging_directory(log_dir: str, log_filename: str) -> str:
     """Ensure the logging directory exists, and return the log file path."""
     if not os.path.exists(log_dir):
         os.makedirs(log_dir)
-    log_file = os.path.join(log_dir, 'app.log')
+    log_file = os.path.join(log_dir, log_filename)
     
     return log_file

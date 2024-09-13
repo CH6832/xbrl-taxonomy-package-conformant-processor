@@ -21,6 +21,7 @@ from colorama import Fore
 from ..checker.TPChecker import TPChecker
 from ..helpers.utils import print_color_msg
 
+
 class TaxonomyPackageFixerInterface(ABC):
     """
     The Interface provides methods to fix an XBRL Taxonomy Package by a certain provider.

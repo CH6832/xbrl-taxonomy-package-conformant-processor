@@ -53,14 +53,20 @@ A small command line program that checks whether an XBRL Taxonomy Package compli
 pip3 install -r requirements.txt
 ```
 
-1. Run script:
+1. Navigate into `src` folder
 
 ```sh
-python3 app.py [PROVIDER] [PATH/TO/PKG]
+cd src/
+```
+
+2. Run script:
+
+```sh
+py app.py [PROVIDER] [PATH/TO/PKG]
 ```
 
 ```sh
-python3 app.py EDINET "input/ALL_20221101/ALL_20221101.zip"
+py app.py EDINET "input/ALL_20221101/ALL_20221101.zip"
 ```
 
 ```sh
@@ -78,13 +84,7 @@ Analyzis results:
     ERROR: Package has no taxonomy-package.xml
 
 Fixing package...
-    META-INF directory generated
-    Top level directory generated
-    Package content restructured
-    catalog.xml file generated
-    catalog.xml is xml file
-    taxonomyPackage.xml file generated
-    taxonomyPackage.xml is xml file
+.\abspath\to\fixed\zip\Reporting_Frameworks_3.3.0.0_errata.zip
     Final zip generated
 
 Output result:

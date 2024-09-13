@@ -1,1 +1,6 @@
-# Logging content
+2024-09-13 12:32:12,783 - __main__ - ERROR - Please provide both: Abbreveation of provider and full path to taxonomy package (zip).
+2024-09-13 12:35:37,773 - __main__ - ERROR - Please provide both: Abbreveation of provider and full path to taxonomy package (zip).
+2024-09-13 12:36:49,540 - __main__ - ERROR - Please provide both: Abbreveation of provider and full path to taxonomy package (zip).
+2024-09-13 12:37:02,594 - __main__ - ERROR - Please provide both: Abbreveation of provider and full path to taxonomy package (zip).
+2024-09-13 12:37:37,253 - __main__ - ERROR - Please provide both: Abbreveation of provider and full path to taxonomy package (zip).
+2024-09-13 12:38:07,767 - __main__ - INFO - Output result: Reporting_Frameworks_3.3.0.0_errata.zip

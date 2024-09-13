@@ -9,9 +9,9 @@ Main program and entry point.
 import os
 import sys
 from typing import Any, Literal
-from src.helpers.logger import set_logging_directory, setup_logger
 # line below ensures that python searhces through all directories for imports
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+from src.helpers.logger import set_logging_directory, setup_logger
 import argparse
 import shutil
 from pathlib import Path
@@ -25,12 +25,11 @@ from src.helpers.utils import *
 from src.enums.Providers import Provider
 
 
-log_file_path = set_logging_directory(r'..\logs')
+log_file_path = set_logging_directory(r'..\logs', log_filename="app.log")
 logger = setup_logger(__name__, log_file=log_file_path)
 
 def main() -> None:
     """Driving code."""
-    
     # intialize the colorama module
     init(autoreset=True)
     
@@ -38,7 +37,7 @@ def main() -> None:
     try:
         provider, package = parse_arguments()
     except:
-        error_message = f"""Please provide both: Abbreveation of provider (str.upper()) and full path to taxonomy package (zip):
+        error_message = f"""Please provide both: Abbreveation of provider and full path to taxonomy package (zip):
 {os.path.basename(__file__)} EBA '..\\input\\ALL_20221101\\ALL_20221101.zip'"""
         raise SystemExit(print_color_msg(f"Error: {error_message}",Fore.RED))
     logger.error("Please provide both: Abbreveation of provider (str.upper()) and full path to taxonomy package (zip).")
@@ -93,7 +92,7 @@ def parse_arguments():
 
 
 def check_package(tp_checker, package) -> tuple[Any, Any | Literal[False], Any]:
-    """Perform all package checks"""
+    """Perform all package checks."""
     ZIP_FORMAT = tp_checker.has_zip_format(package)
     SINGLE_DIR = tp_checker.has_top_level_single_dir(package) if ZIP_FORMAT else False
     METAINF_DIR = tp_checker.has_meta_inf_folder(package) and \
@@ -124,8 +123,8 @@ def fix_package(provider_name, package_class, source_zip_path, destination_folde
     # Restructure the package folder
     fixer.restructure_folder()
     # Regenerate necessary XML files.
-    fixer.fix_catalog_xml(destination_folder)
-    fixer.fix_taxonomy_package_xml(destination_folder)
+    fixer.fix_catalog_xml()
+    fixer.fix_taxonomy_package_xml()
 
     # Generate the final ZIP archive in the destination folder.
     full_path_to_zip = str(source_zip_path).replace("input", "output")
