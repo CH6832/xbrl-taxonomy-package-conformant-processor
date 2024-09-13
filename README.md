@@ -92,26 +92,6 @@ Output result:
     ..\output\ALL_20221101\ALL_20221101.zip is fixed!
 ```
 
-### Build and install the `.whl` package
-
-0. Upgrade packages:
-
-```sh
-py -m pip install --upgrade build 
-```
-
-1. Build package:
-
-```sh
-py -m build 
-```
-
-2. Install the package:
-
-```sh
-py -m pip install "dist/example_package_CHRISTOPH_HARTLEB-0.0.1-py3-none-any.whl"
-```
-
 ### Run tests
 
 0. Move into `tests/` folder
@@ -144,6 +124,36 @@ sphinx-quickstart
 
 ```sh
 make html
+```
+
+3. move into `html` folder
+
+```sh
+cd `docs/build/html`
+```
+
+4. Open `index.html` in browser
+
+![index.html](/images/readme/docs_index.jpg)
+
+### Build and install the `.whl` package
+
+0. Upgrade packages:
+
+```sh
+py -m pip install --upgrade build 
+```
+
+1. Build package:
+
+```sh
+py -m build 
+```
+
+2. Install the package:
+
+```sh
+py -m pip install "dist/example_package_CHRISTOPH_HARTLEB-0.0.1-py3-none-any.whl"
 ```
 
 ## :bulb: Tips and Tricks
@@ -209,6 +219,9 @@ See the [COPYRIGHT](COPYRIGHT) file for copyright and licensing details.
 * XML
   * [Extensible Markup Language (XML) 1.0 (Fifth Edition)](https://www.w3.org/TR/xml/)
   * [W3C XML Schema Definition Language (XSD) 1.1 Part 1: Structures](https://www.w3.org/TR/xmlschema11-1/)
+* Commandline tools
+  * [Master the Art of Command Line: Your Ultimate Guide to Developing Powerful Tools](https://hackernoon.com/master-the-art-of-command-line-your-ultimate-guide-to-developing-powerful-tools)
+  * [Command Line Interface Guidelines](https://clig.dev/)
 * Markdwon
   * [Basic syntax](https://www.markdownguide.org/basic-syntax/)
   * [Complete list of github markdown emofis](https://dev.to/nikolab/complete-list-of-github-markdown-emoji-markup-5aia)
