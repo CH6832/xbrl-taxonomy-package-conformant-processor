@@ -17,6 +17,7 @@ A small command line program that checks whether an XBRL Taxonomy Package compli
     .
     ├── dist/ - python wheel file to install
     ├── docs/ - generated documentation
+    ├── images/readme - all images for the app
     ├── input/ - taxonomy packages
     ├── logs/ - logfiles
     ├── src/ - source code
