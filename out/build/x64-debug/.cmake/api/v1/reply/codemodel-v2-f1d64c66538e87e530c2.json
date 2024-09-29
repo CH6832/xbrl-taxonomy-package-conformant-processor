@@ -1,0 +1,76 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.8"
+					},
+					"projectIndex" : 0,
+					"source" : "."
+				},
+				{
+					"build" : "xbrl-taxonomy-package-conformant-processor",
+					"jsonFile" : "directory-xbrl-taxonomy-package-conformant-processor-Debug-fdbec3f30a2d14961fa8.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "xbrl-taxonomy-package-conformant-processor",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1
+					],
+					"name" : "xbrl-taxonomy-package-conformant-processor",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 1,
+					"id" : "xbrl-taxonomy-package-conformant-processor::@3f29e9151dc1f38a4a63",
+					"jsonFile" : "target-xbrl-taxonomy-package-conformant-processor-Debug-6384757448535faab537.json",
+					"name" : "xbrl-taxonomy-package-conformant-processor",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/chris/Desktop/xbrl-taxonomy-package-conformant-processor/out/build/x64-debug",
+		"source" : "C:/Users/chris/Desktop/xbrl-taxonomy-package-conformant-processor"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}

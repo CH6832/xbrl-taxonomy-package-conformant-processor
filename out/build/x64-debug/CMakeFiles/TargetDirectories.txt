@@ -1,0 +1,5 @@
+C:/Users/chris/Desktop/xbrl-taxonomy-package-conformant-processor/out/build/x64-debug/CMakeFiles/edit_cache.dir
+C:/Users/chris/Desktop/xbrl-taxonomy-package-conformant-processor/out/build/x64-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/chris/Desktop/xbrl-taxonomy-package-conformant-processor/out/build/x64-debug/xbrl-taxonomy-package-conformant-processor/CMakeFiles/xbrl-taxonomy-package-conformant-processor.dir
+C:/Users/chris/Desktop/xbrl-taxonomy-package-conformant-processor/out/build/x64-debug/xbrl-taxonomy-package-conformant-processor/CMakeFiles/edit_cache.dir
+C:/Users/chris/Desktop/xbrl-taxonomy-package-conformant-processor/out/build/x64-debug/xbrl-taxonomy-package-conformant-processor/CMakeFiles/rebuild_cache.dir

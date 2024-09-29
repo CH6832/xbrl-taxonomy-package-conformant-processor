@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "xbrl-taxonomy-package-conformant-processor",
+		"source" : "xbrl-taxonomy-package-conformant-processor"
+	}
+}

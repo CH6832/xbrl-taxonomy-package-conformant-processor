@@ -1,0 +1,6 @@
+# ninja log v5
+1	141	7492987448951248	build.ninja	c7e90a8da660470f
+40	705	7492972991041126	xbrl-taxonomy-package-conformant-processor/CMakeFiles/xbrl-taxonomy-package-conformant-processor.dir/src/helpers/error_handler.cpp.obj	51570fcab09c72e9
+29	690	7492972990884904	xbrl-taxonomy-package-conformant-processor/CMakeFiles/xbrl-taxonomy-package-conformant-processor.dir/src/fixers/EBAFixer.cpp.obj	ae260ac82104dd0
+42	1519	7492972999195614	xbrl-taxonomy-package-conformant-processor/CMakeFiles/xbrl-taxonomy-package-conformant-processor.dir/src/helpers/logger.cpp.obj	59bd5901f32120d7
+19	1598	7492987661321457	xbrl-taxonomy-package-conformant-processor/CMakeFiles/xbrl-taxonomy-package-conformant-processor.dir/src/helpers/utils.cpp.obj	f906655e458b6bf0
